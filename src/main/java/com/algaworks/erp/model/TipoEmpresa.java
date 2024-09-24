@@ -1,5 +1,5 @@
 package com.algaworks.erp.model;
-//Enum para o auxlio na criaçao e ineçao de atributos e tabelas 
+
 public enum TipoEmpresa {
 	
 	MEI("Microempreendedor Individual"), 

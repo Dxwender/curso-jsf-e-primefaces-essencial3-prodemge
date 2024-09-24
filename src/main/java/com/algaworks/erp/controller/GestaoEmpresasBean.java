@@ -1,5 +1,5 @@
 package com.algaworks.erp.controller;
-// criação de escopos de view,requisicao ,sessao e criaçao e vinculçao com pagina XHTML
+
 import java.io.Serializable;
 
 import javax.faces.view.ViewScoped;

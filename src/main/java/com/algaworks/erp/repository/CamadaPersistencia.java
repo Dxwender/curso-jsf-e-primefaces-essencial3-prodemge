@@ -1,5 +1,5 @@
 package com.algaworks.erp.repository;
-//Classe para teste da camada de persisencia
+
 import java.util.Date;
 import java.util.List;
 

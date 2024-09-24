@@ -1,4 +1,3 @@
-//Camada de criaçao e instaciamento de atributos como tabelas no DB Mysql-Mapeamento de entidades
 package com.algaworks.erp.model;
 
 import java.io.Serializable;

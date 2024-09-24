@@ -1,5 +1,5 @@
 package com.algaworks.erp.repository;
-//teste do sql
+
 import java.util.List;
 
 import javax.persistence.EntityManager;

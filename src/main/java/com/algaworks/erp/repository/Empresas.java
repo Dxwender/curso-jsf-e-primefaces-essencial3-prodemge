@@ -1,6 +1,5 @@
 package com.algaworks.erp.repository;
-//--Camada de tratamento e injeçao de valores em java para sql 
-//Camada de operacoes no banco de dados CRUD dentro da entidade
+
 import java.io.Serializable;
 import java.util.List;
 
