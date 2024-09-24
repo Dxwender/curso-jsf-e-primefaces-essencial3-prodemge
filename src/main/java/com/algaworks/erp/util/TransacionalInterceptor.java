@@ -1,5 +1,5 @@
 package com.algaworks.erp.util;
-//Classe intercptadora de motodos para se paracao dos mesmos para não causar confusao entre eles
+//Classe intercptadora de motodos para separacao dos metodo para não causar confusao entre eles
 import java.io.Serializable;
 
 import javax.annotation.Priority;
