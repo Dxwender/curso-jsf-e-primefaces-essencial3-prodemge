@@ -1,5 +1,5 @@
 package com.algaworks.erp.util;
-
+//classe intercepatçao de metodos e insercao de dependencias CDI
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Disposes;

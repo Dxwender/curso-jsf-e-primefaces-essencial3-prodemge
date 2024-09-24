@@ -1,3 +1,4 @@
+//Camaada de criaçao e instanciamento de atributos do DB Mysqls-Mapeamento de entidade
 package com.algaworks.erp.model;
 
 import java.io.Serializable;

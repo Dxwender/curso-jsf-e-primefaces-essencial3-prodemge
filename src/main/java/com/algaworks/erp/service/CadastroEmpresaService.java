@@ -1,5 +1,5 @@
 package com.algaworks.erp.service;
-
+//Classe onde ficam as regras de nogocio
 import java.io.Serializable;
 
 import javax.inject.Inject;
