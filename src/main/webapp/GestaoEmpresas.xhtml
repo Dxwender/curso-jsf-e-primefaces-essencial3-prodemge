@@ -20,7 +20,7 @@
 	</header>
 
 	<div id="conteudo">
-		<h:form>
+		<h:form id="formulario">
 			<h:panelGrid columns="2">
 				<p:outputLabel value="Razão social: " for="razaoSocial" />
 				<h:panelGroup>
@@ -50,11 +50,11 @@
 						<f:validateLength minimum="18" maximum="18" />	
 					</p:inputText>
 					
-					<h:message for="cnpj"/>
+					<p:message for="cnpj"/>
 				</h:panelGroup>
 				
 				<p:outputLabel value="Data fundação: " for="dataFundacao" />
-				<p:panelGroup>
+				<h:panelGroup>
 					<p:inputText id="dataFundacao" value="#{gestaoEmpresasBean.empresa.dataFundacao}"
 							label="Data fundação">
 						<f:convertDateTime pattern="dd/MM/yyyy" />	
@@ -75,14 +75,15 @@
 				</h:panelGroup>
 				
 				<h:outputLabel />
-				<p:commandButton value="Salvar" actionListener="#{gestaoEmpresasBean.salvar}"/>
+				<p:commandButton value="Salvar" actionListener="#{gestaoEmpresasBean.salvar}"
+						update="@form"/>
 				
 				<h:outputLabel />
 				<p:commandLink value="Ajuda?" action="#{gestaoEmpresasBean.ajuda}"/>
 			</h:panelGrid>
 			
 			<p:dataTable value="#{[0, 0, 0, 0]}">
-				<p:column headerText="Razão Social">
+				<p:column headerText="Razão social">					
 					<h:outputText value="AlgaWorks Softwares, Treinamentos LDTA" />
 				</p:column>
 				
@@ -93,8 +94,6 @@
 				<p:column headerText="Tipo empresa">
 					<h:outputText value="LDTA" />
 				</p:column>
-				
-				
 			</p:dataTable>
 		</h:form>	
 	</div>
