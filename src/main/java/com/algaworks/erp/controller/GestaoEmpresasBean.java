@@ -1,12 +1,15 @@
 package com.algaworks.erp.controller;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.faces.convert.Converter;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+
+import org.primefaces.context.RequestContext;
 
 import com.algaworks.erp.model.Empresa;
 import com.algaworks.erp.model.RamoAtividade;
@@ -30,6 +33,7 @@ public class GestaoEmpresasBean implements Serializable {
     
     @Inject
     private RamoAtividades ramoAtividades;
+    
     @Inject
     private CadastroEmpresaService cadastroEmpresaService;
     
@@ -42,15 +46,22 @@ public class GestaoEmpresasBean implements Serializable {
     private Empresa empresa;
     
     public void prepararNovaEmpresa() {
-    	empresa = new Empresa();
+        empresa = new Empresa();
     }
+    
     public void salvar() {
-    	cadastroEmpresaService.salvar(empresa);
-    	
-    	if (jaHouvePesquisa()) {
-    		pesquisar();
-    	}
-    	messages.info("Empresa cadastrada com sucesso!");
+        cadastroEmpresaService.salvar(empresa);
+        
+        if (jaHouvePesquisa()) {
+            pesquisar();
+        } else {
+            todasEmpresas();
+        }
+        
+        messages.info("Empresa salva com sucesso!");
+        
+        RequestContext.getCurrentInstance().update(Arrays.asList(
+                "frm:empresasDataTable", "frm:messages"));
     }
     
     public void pesquisar() {
@@ -74,7 +85,7 @@ public class GestaoEmpresasBean implements Serializable {
     }
     
     private boolean jaHouvePesquisa() {
-    	return termoPesquisa != null && !"".equals(termoPesquisa);
+        return termoPesquisa != null && !"".equals(termoPesquisa);
     }
     
     public List<Empresa> getListaEmpresas() {
@@ -98,6 +109,6 @@ public class GestaoEmpresasBean implements Serializable {
     }
     
     public Empresa getEmpresa() {
-		return empresa;
-	}
+        return empresa;
+    }
 }
