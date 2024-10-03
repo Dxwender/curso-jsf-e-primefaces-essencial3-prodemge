@@ -53,6 +53,7 @@ public class GestaoEmpresasBean implements Serializable {
         ramoAtividadeConverter = new RamoAtividadeConverter(Arrays.asList(empresa.getRamoAtividade()));
     }
     
+   //RAZAO SOCIAL-5°-LIGADO AO GESTAOEMPRESAS DEPOIS DO PROCESSAMENTO,CONVESAO E VALIDASAO A INFORMACAO E SALVA
     public void salvar() {
         cadastroEmpresaService.salvar(empresa);
         
@@ -63,6 +64,7 @@ public class GestaoEmpresasBean implements Serializable {
         RequestContext.getCurrentInstance().update(Arrays.asList(
                 "frm:empresasDataTable", "frm:messages"));
     }
+   //RAZAO SOCIAL-5°-LIGADO AO GESTAOEMPRESAS DEPOIS DO PROCESSAMENTO,CONVESAO E VALIDASAO A INFORMACAO E SALVA
     
     public void excluir() {
         cadastroEmpresaService.excluir(empresa);
@@ -126,9 +128,11 @@ public class GestaoEmpresasBean implements Serializable {
         return ramoAtividadeConverter;
     }
     
+    //3°-RAZAO SOCIAL-PROCESSAMENTO-DAS-INFORMAÇES 
     public Empresa getEmpresa() {
         return empresa;
     }
+    //3°-RAZAO SOCIAL-PROCESSAMENTO-DAS-INFORMAÇES
     
     public void setEmpresa(Empresa empresa) {
         this.empresa = empresa;

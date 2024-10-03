@@ -35,9 +35,13 @@ public class Empresa implements Serializable {
 	@Column(name = "nome_fantasia", nullable = false, length = 80)
 	private String nomeFantasia;
 	
+	
+	//RAZAO SOCIAL-4º-ATUALIZACAO/CRIACAO-DA-INFORMACAO-NO-BANCO
 	@NotEmpty
 	@Column(name = "razao_social", nullable = false, length = 120)
 	private String razaoSocial;
+	//RAZAO SOCIAL-4°-ATUALIZACAO/CRIACAO-DA-INFORMACAO-NO-BANCO
+	
 	
 	@CNPJ
 	@NotNull
@@ -49,6 +53,7 @@ public class Empresa implements Serializable {
 	@Temporal(TemporalType.DATE)
 	@Column(name = "data_fundacao")
 	private Date dataFundacao;
+	
 	
 	@NotNull
 	@ManyToOne
@@ -75,19 +80,26 @@ public class Empresa implements Serializable {
 	public void setNomeFantasia(String nomeFantasia) {
 		this.nomeFantasia = nomeFantasia;
 	}
-
+	
+	
+	//RAZAO SOCIAL-3°-PROCESSAMENTO-DAS-INFORMAÇES
 	public String getRazaoSocial() {
 		return razaoSocial;
 	}
-
+	//-RAZAO SOCIAL-3°-PROCESSAMENTO-DAS-INFORMAÇES
+	
+	//RAZAO SOCIAL-3°-CONVERSAO/VALIDACAO-E-PROCESSAMENTO-DA-INFORMACAO
 	public void setRazaoSocial(String razaoSocial) {
 		this.razaoSocial = razaoSocial;
 	}
-
+	//RAZAO SOCIAL-3°-CONVERSAO/VALIDACAO-E-PROCESSAMENTO-DA-INFORMACAO
+	
+	
+	
 	public String getCnpj() {
 		return cnpj;
 	}
-
+	
 	public void setCnpj(String cnpj) {
 		this.cnpj = cnpj;
 	}
