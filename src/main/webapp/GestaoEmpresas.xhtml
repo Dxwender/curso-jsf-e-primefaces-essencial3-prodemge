@@ -35,18 +35,26 @@
 	            	actionListener="#{gestaoEmpresasBean.prepararNovaEmpresa}" 
 	            	oncomplete="PF('empresaDialogWidgetVar').show()"
 	            	update="empresaDialog" process="@this">
-	            	<p:resetInput target="empresaDialog"/>
-	            	</p:commandButton>
+	            	<p:resetInput target="empresaDialog" />	
+            	</p:commandButton>
 	            
 				<span class="ui-separator">
 	                <span class="ui-icon ui-icon-grip-dotted-vertical" />
 	            </span>
 	            
 	            <p:commandButton title="Editar" icon="fa fa-edit" 
-	            disabled="#{ not gestaoEmpresasBean.empresaSelecionada}"/>
+	            	disabled="#{not gestaoEmpresasBean.empresaSeleciona}"
+	            	actionListener="#{gestaoEmpresasBean.prepararEdicao}"
+	            	oncomplete="PF('empresaDialogWidgetVar').show()"
+	            	update="empresaDialog" process="@this">
+	            	<p:resetInput target="empresaDialog" />	
+            	</p:commandButton>
 	            
 	            <p:commandButton title="Excluir" icon="fa fa-trash" 
-	            disabled="#{ not gestaoEmpresasBean.empresaSelecionada}"/>
+	            	disabled="#{not gestaoEmpresasBean.empresaSeleciona}"
+	            	actionListener="#{gestaoEmpresasBean.excluir}"
+	            	update="messages empresasDataTable toolbar"
+	            	process="@this"/>
 	            
 				<span class="ui-separator">
 	                <span class="ui-icon ui-icon-grip-dotted-vertical" />
@@ -60,9 +68,8 @@
 		
 		<p:dataTable id="empresasDataTable" value="#{gestaoEmpresasBean.listaEmpresas}"
 			var="empresa" emptyMessage="Nenhuma informação a ser exibida"
-			paginator="true" rows="10" paginatorPosition="bottom" 
-			selectionMode="single" selection="#{gestaoEmpresasBean.empresa}"
-			rowKey="#{empresa.id}" >
+			paginator="true" rows="10" paginatorPosition="bottom"
+			selectionMode="single" selection="#{gestaoEmpresasBean.empresa}" rowKey="#{empresa.id}">
 			
 			<p:ajax event="rowSelect" update="frm:toolbar" />
 			
@@ -89,7 +96,7 @@
 			modal="true" resizable="false" closeOnEscape="true">
 			<p:messages id="empresaMessages" />
 			
-			<p:defaultCommand target="salvarCommandButton" scope="empresaDialog"/>
+			<p:defaultCommand target="salvarCommandButton" scope="empresaDialog" />
 			
 			<h:panelGrid id="empresaPanelGrid" columns="2"
 				rendered="#{gestaoEmpresasBean.empresa ne null}">
