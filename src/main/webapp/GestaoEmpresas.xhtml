@@ -16,8 +16,10 @@
 	</f:metadata>
 	
 	<h:form id="frm">
+		
+
 		<p:messages id="messages" />
-	
+				
 		<p:toolbar id="toolbar">
 			<f:facet name="left">
 				<p:inputText id="termoPesquisa" placeholder="Digite aqui um termo para pesquisa..." 
@@ -54,7 +56,10 @@
 	            	disabled="#{not gestaoEmpresasBean.empresaSeleciona}"
 	            	actionListener="#{gestaoEmpresasBean.excluir}"
 	            	update="messages empresasDataTable toolbar"
-	            	process="@this"/>
+	            	process="@this" >
+	            	<p:confirm icon="ui-icon-alert" header="Confirmação de exclusão" 
+	            		message="Posso excluir a empresa?"/>
+	            	</p:commandButton>
 	            
 				<span class="ui-separator">
 	                <span class="ui-icon ui-icon-grip-dotted-vertical" />
