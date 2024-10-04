@@ -79,8 +79,8 @@
 			selectionMode="single" selection="#{gestaoEmpresasBean.empresa}" rowKey="#{empresa.id}">
 			
 			<p:ajax event="rowSelect" update="frm:toolbar" />
-			
 			<p:ajax event="rowUnselect" update="frm:toolbar" />
+			
 			<!-- 6° DEPOIS DE TUDO SALVO E VALIDADO RENDERIZA A RESPOSTA PARA O BROWSE E USUARIO-->
 			<p:column headerText="Razão social" sortBy="#{empresa.razaoSocial}">
 				<h:outputText value="#{empresa.razaoSocial}" />
